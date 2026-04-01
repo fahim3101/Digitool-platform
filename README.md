@@ -34,7 +34,6 @@ DigiTools is a modern, high-performance digital marketplace built with React and
 - React-Toastify (notifications)
 - CSS/Responsive Design (custom layouts)
 
-📂 Project Structure
 DigiTools/
 │── public/          # Static assets
 │── src/
