@@ -9,7 +9,7 @@ const Navbar = ({ cartCount }) => {
         DigiTools
       </div>
 
-      {/* Center Links - Hidden on smaller screens */}
+      {/* Center Links */}
       <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
         <a href="#" className="hover:text-[#8b5cf6] transition">Products</a>
         <a href="#" className="hover:text-[#8b5cf6] transition">Features</a>

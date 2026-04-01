@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-// Components (Make sure to import them)
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
 import Stats from './components/Stats';
@@ -11,21 +9,17 @@ import Steps from './components/Steps';
 import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-
-// JSON Data Import
 import productsData from './data.json';
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [activeTab, setActiveTab] = useState('Products'); // Default: Product section visible
+  const [activeTab, setActiveTab] = useState('Products');
 
-  // 1. Add to Cart Functionality
   const handleAddToCart = (product) => {
     const isExist = cart.find(item => item.id === product.id);
     
     if (!isExist) {
       setCart([...cart, product]);
-      // NPM Package React-Toastify Alert
       toast.success('Successfully added to cart!', {
         position: "bottom-right",
         autoClose: 2000,
@@ -38,21 +32,18 @@ const App = () => {
     }
   };
 
-  // 2. Remove Product Functionality
   const handleRemoveFromCart = (id) => {
     const updatedCart = cart.filter(item => item.id !== id);
     setCart(updatedCart);
-    // NPM Package React-Toastify Alert
     toast.error('Product removed from cart!', {
       position: "bottom-right",
       autoClose: 2000,
     });
   };
 
-  // 3. Proceed to Checkout Functionality
   const handleCheckout = () => {
     if (cart.length > 0) {
-      setCart([]); // Clears all cart items
+      setCart([]); 
       toast.success('Successfully proceeded to checkout!', {
         position: "top-center",
         autoClose: 3000,
@@ -65,7 +56,6 @@ const App = () => {
     }
   };
 
-  // 4. Tab Toggling Logic
   const toggleTab = (tabName) => {
     setActiveTab(tabName);
   };
@@ -81,7 +71,7 @@ const App = () => {
       {/* Stats Section */}
       <Stats />
 
-      {/* Main Section: Toggling between Product & Cart */}
+      {/* Main Section: */}
       <MainSection 
         products={productsData}
         cart={cart}
@@ -93,7 +83,7 @@ const App = () => {
       />
       
 
-      {/* Other Figma Sections */}
+      {/* Other Sections */}
       
 
       <Steps />
@@ -101,7 +91,7 @@ const App = () => {
       <CTA />
       <Footer />
 
-      {/* Toast Notification Container */}
+      {/* Notification Container */}
       <ToastContainer pauseOnFocusLoss={false} theme="colored" />
     </div>
   );

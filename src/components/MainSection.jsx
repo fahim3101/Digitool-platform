@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Images Import (Confirm names match your src/assets folder)
 import designTool from '../assets/design-tool.png';
 import operation from '../assets/operation.png';
 import portfolio from '../assets/portfolio.png';
@@ -9,7 +7,6 @@ import writing from '../assets/writing_2327400 1.png';
 
 const MainSection = ({ products, cart, activeTab, toggleTab, handleAddToCart, handleRemoveFromCart, handleCheckout }) => {
   
-  // Image Mapping Logic
   const getImage = (imageName) => {
     const images = {
       "design-tool.png": designTool,
